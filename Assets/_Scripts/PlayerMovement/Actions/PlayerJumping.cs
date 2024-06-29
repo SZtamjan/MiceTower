@@ -6,7 +6,7 @@ namespace _Scripts.PlayerMovement
 {
     public class PlayerJumping : MonoBehaviour
     {
-        public bool onGround = true;
+        [HideInInspector] public bool onGround = true;
         private Rigidbody2D _rigidbody2D;
 
         private void Start()

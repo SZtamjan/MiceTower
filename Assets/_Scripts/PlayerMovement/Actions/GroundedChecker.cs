@@ -1,11 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace _Scripts.PlayerMovement.Actions
 {
     public class GroundedChecker : MonoBehaviour
     {
+        public static GroundedChecker Instance;
+        
         [SerializeField] private PlayerJumping playerJumping;
         public LayerMask layerMask;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Update()
         {
