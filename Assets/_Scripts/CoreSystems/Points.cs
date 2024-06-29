@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.UI;
 using UnityEngine;
 
 namespace _Scripts.CoreSystems
@@ -26,7 +27,7 @@ namespace _Scripts.CoreSystems
 
         private void UpdateUI()
         {
-            
+            UIController.Instance.NewScoreToDisplay(_points);
         }
 
         private void CheckIfFinish()
