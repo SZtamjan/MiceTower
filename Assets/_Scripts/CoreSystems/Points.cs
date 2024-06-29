@@ -33,7 +33,7 @@ namespace _Scripts.CoreSystems
         private void CheckIfFinish()
         {
             GameManager gm = GetComponent<GameManager>();
-            if (gm.GoalScore <= _points) GetComponent<GameManager>().StartNewGameState(GameState.Finish);
+            if (gm.GoalScore <= _points && GameManager.Instance.CurrentGameState == GameState.Game) GetComponent<GameManager>().StartNewGameState(GameState.Finish);
         }
     }
 }

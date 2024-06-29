@@ -7,6 +7,8 @@ namespace _Scripts.CoreSystems
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance;
+        
         private GameState currentGameState;
         private Coroutine _floorSpawnCor;
         
@@ -18,6 +20,11 @@ namespace _Scripts.CoreSystems
         public GameState CurrentGameState => currentGameState;
 
         public int GoalScore => goalScore;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {
@@ -42,8 +49,14 @@ namespace _Scripts.CoreSystems
                     StopFloor();
                     SpawnFinalRoom();
                     break;
+                case GameState.Win:
+                    Debug.Log("Win is To be implemented");
+                    break;
+                case GameState.Lose:
+                    Debug.Log("Lose is To be implemented");
+                    break;
                 default:
-                    Debug.Log("Terrible exception");
+                    Debug.LogError("Terrible exception, cant be " + newState);
                     break;
             }
         }
@@ -91,7 +104,13 @@ namespace _Scripts.CoreSystems
 
         private void SpawnFinalRoom()
         {
+            if (!TryGetComponent(out FloorManager floorManager))
+            {
+                Debug.LogError("Brak FloorManager w obiekcie GameManager");
+                return;
+            }
             
+            floorManager.SpawnRoom(floorMoveSpeed);
         }
 
         #endregion
@@ -102,6 +121,8 @@ namespace _Scripts.CoreSystems
     {
         PreStart,
         Game,
-        Finish
+        Finish,
+        Win,
+        Lose
     }
 }

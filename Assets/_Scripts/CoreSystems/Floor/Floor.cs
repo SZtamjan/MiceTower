@@ -10,7 +10,9 @@ namespace _Scripts.CoreSystems.Floor
         private BoxCollider2D _myCollider;
             
         [SerializeField] private int pointsForMe = 10;
+        public bool iAmBuilding = false;
         public float mySpeed = 1f;
+        
 
         private void Start()
         {
@@ -39,6 +41,12 @@ namespace _Scripts.CoreSystems.Floor
             float yPos = myPosition.y;
             yPos -= mySpeed * 10f * Time.deltaTime;
 
+            if(iAmBuilding && transform.position.y < 0f)
+            {
+                if(GameManager.Instance.CurrentGameState == GameState.Finish) GameManager.Instance.StartNewGameState(GameState.Win);
+                return;
+            }
+            
             transform.position = new Vector3(myPosition.x, yPos, myPosition.z);
         }
 
