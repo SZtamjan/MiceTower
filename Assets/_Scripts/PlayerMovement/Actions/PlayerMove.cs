@@ -10,7 +10,7 @@ namespace _Scripts.PlayerMovement.Actions
         private float myDirection = 0f;
         [SerializeField] private bool isGyro = false;
         private Rigidbody2D _rigidbody2D;
-        private Animator animator;
+        
 
         private void Start()
         {
@@ -18,7 +18,7 @@ namespace _Scripts.PlayerMovement.Actions
             _rigidbody2D = GetComponent<Rigidbody2D>();
             maxSpeed = GetComponent<PlayerController>().MaxPlayerSpeed;
             playerAcceleration = GetComponent<PlayerController>().PlayerAcceleration;
-            animator = GetComponent<Animator>();
+            
         }
 
         public void ChangeDirection(float dir)
@@ -44,7 +44,7 @@ namespace _Scripts.PlayerMovement.Actions
                     float newXVel = Mathf.Clamp(currVelocity.x, -maxSpeed, maxSpeed);
                     currVelocity.x = newXVel;
                     _rigidbody2D.velocity = currVelocity;
-                    animator.SetFloat("xVelocity", Math.Abs(currVelocity.x));
+                    
                 }
                 else if (normalizedValue < 1f && normalizedValue > .5f)
                 {
@@ -56,7 +56,7 @@ namespace _Scripts.PlayerMovement.Actions
                     float newXVel = Mathf.Clamp(currVelocity.x, -maxSpeed, maxSpeed);
                     currVelocity.x = newXVel;
                     _rigidbody2D.velocity = currVelocity;
-                    animator.SetFloat("xVelocity", Math.Abs(currVelocity.x));
+                    
                 }
                 
             }
@@ -68,7 +68,7 @@ namespace _Scripts.PlayerMovement.Actions
                 float newXVel = Mathf.Clamp(currVelocity.x, -maxSpeed, maxSpeed);
                 currVelocity.x = newXVel;
                 _rigidbody2D.velocity = currVelocity;
-                animator.SetFloat("xVelocity", Math.Abs(currVelocity.x));
+                
             }
         }
     }
