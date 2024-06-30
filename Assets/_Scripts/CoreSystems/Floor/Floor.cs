@@ -26,7 +26,7 @@ namespace _Scripts.CoreSystems.Floor
 
         private void GivePoints()
         {
-            Points.Instance.AddPoints = 10;
+            Points.Instance.AddPoints = pointsForMe;
         }
 
         private void Update()
