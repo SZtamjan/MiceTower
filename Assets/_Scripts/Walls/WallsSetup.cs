@@ -21,9 +21,10 @@ namespace _Scripts.Walls
             Vector2 rightBound = cam.ViewportToWorldPoint(new Vector2(1, .5f));
             Vector2 topBound = cam.ViewportToWorldPoint(new Vector2(.5f, 1f));
 
+            celling.position = topBound;
             leftWall.position = leftBound;
             rightWall.position = rightBound;
-            celling.position = topBound;
+            
         }
     }
 }
