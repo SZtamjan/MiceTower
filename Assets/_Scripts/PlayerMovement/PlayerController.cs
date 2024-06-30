@@ -19,6 +19,8 @@ namespace _Scripts.PlayerMovement
         [SerializeField] private float maxMaxPlayerSpeed = 1f;
         [SerializeField] private float jumpHeight = 1f;
 
+        public float JumpHeight => jumpHeight;
+
         public float PlayerAcceleration => playerAcceleration;
         public float MaxPlayerSpeed => maxMaxPlayerSpeed;
         

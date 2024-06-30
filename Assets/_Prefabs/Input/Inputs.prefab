@@ -56,9 +56,38 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 
+    m_ActionName: 
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 
+    m_ActionName: 
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: _Scripts.PlayerMovement.Input.PlayerInputHandler,
+          Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4c1412b9-c266-4678-b7b1-fc131e71df99
+    m_ActionName: Touch/Touch[/Touchscreen/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d82a03c3-ab67-4f67-9569-ab0225c07035
+    m_ActionName: Touch/TouchPos[/Touchscreen/primaryTouch/position]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: PlayerMovement
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Touch
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

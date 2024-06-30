@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using _Scripts.PlayerMovement.Actions;
 using UnityEngine;
 using UnityEngine.Events;
@@ -36,10 +37,11 @@ namespace _Scripts.PlayerMovement.Input
             {
                 _playerMove.ChangeDirection(readValue);
             }
-            else if(readValue == 0 && context.canceled)
+            else if (readValue == 0 && context.canceled)
             {
                 _playerMove.ChangeDirection(readValue);
             }
         }
+
     }
 }

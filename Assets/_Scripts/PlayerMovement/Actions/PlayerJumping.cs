@@ -1,14 +1,12 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace _Scripts.PlayerMovement
+namespace _Scripts.PlayerMovement.Actions
 {
     public class PlayerJumping : MonoBehaviour
     {
         [HideInInspector] public bool onGround = true;
         private Rigidbody2D _rigidbody2D;
-
+        
         private void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
