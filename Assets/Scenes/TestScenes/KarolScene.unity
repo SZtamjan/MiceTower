@@ -1060,6 +1060,10 @@ PrefabInstance:
       propertyPath: mySpeed
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: -3514874474216253681, guid: 35bacc68e6afad94ba79f1870a0fa8c6, type: 3}
+      propertyPath: pointsForMe
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1521631097440646848, guid: 35bacc68e6afad94ba79f1870a0fa8c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
