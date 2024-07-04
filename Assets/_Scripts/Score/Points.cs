@@ -1,8 +1,8 @@
-﻿using System;
+﻿using _Scripts.CoreSystems;
 using _Scripts.UI;
 using UnityEngine;
 
-namespace _Scripts.CoreSystems
+namespace _Scripts.Score
 {
     public class Points : MonoBehaviour
     {

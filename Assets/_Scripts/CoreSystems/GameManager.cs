@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using _Scripts.Audio;
 using _Scripts.CoreSystems.Floor;
 using _Scripts.Walls;
 using UnityEngine;
@@ -8,15 +10,18 @@ namespace _Scripts.CoreSystems
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        
+
         private GameState currentGameState;
         private Coroutine _floorSpawnCor;
-        
-        [Header("Level settings")]
-        [SerializeField] private int goalScore = 0;
-        [Tooltip("Time between spawn")] [SerializeField] private float spawnFloorRate = 1f;
+
+        [Header("Level settings")] [SerializeField]
+        private int goalScore = 0;
+
+        [Tooltip("Time between spawn")] [SerializeField]
+        private float spawnFloorRate = 1f;
+
         [SerializeField] private float floorMoveSpeed = 5f;
-        
+
         public GameState CurrentGameState => currentGameState;
 
         public int GoalScore => goalScore;
@@ -37,12 +42,15 @@ namespace _Scripts.CoreSystems
         {
             currentGameState = newState;
             Debug.Log("Curr state " + newState);
-            
+
             switch (newState)
             {
                 case GameState.PreStart:
                     SetupWalls();
                     StartNewGameState(GameState.Game);
+                    List<string> songs = new List<string>();
+                    songs.Add("Test");
+                    StartCoroutine(AudioManagerScript.Instance.PlayMusicsRandomlyInLoop(songs));
                     break;
                 case GameState.Game:
                     StartFloor();
@@ -52,9 +60,13 @@ namespace _Scripts.CoreSystems
                     SpawnFinalRoom();
                     break;
                 case GameState.Win:
+                    AudioManagerScript.Instance.PauseMusic();
+                    StopFloor();
                     Debug.Log("Win is To be implemented");
                     break;
                 case GameState.Lose:
+                    AudioManagerScript.Instance.PauseMusic();
+                    StopFloor();
                     Debug.Log("Lose is To be implemented");
                     break;
                 default:
@@ -95,6 +107,21 @@ namespace _Scripts.CoreSystems
 
         #region Finish
 
+        private void SpawnFinalRoom()
+        {
+            if (!TryGetComponent(out FloorManager floorManager))
+            {
+                Debug.LogError("Brak FloorManager w obiekcie GameManager");
+                return;
+            }
+
+            floorManager.SpawnRoom(floorMoveSpeed);
+        }
+
+        #endregion
+
+        #region MultiUse
+
         private void StopFloor()
         {
             if (_floorSpawnCor != null)
@@ -104,19 +131,7 @@ namespace _Scripts.CoreSystems
             }
         }
 
-        private void SpawnFinalRoom()
-        {
-            if (!TryGetComponent(out FloorManager floorManager))
-            {
-                Debug.LogError("Brak FloorManager w obiekcie GameManager");
-                return;
-            }
-            
-            floorManager.SpawnRoom(floorMoveSpeed);
-        }
-
         #endregion
-        
     }
 
     public enum GameState
