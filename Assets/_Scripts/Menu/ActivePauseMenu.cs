@@ -1,41 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ActivePauseMenu : MonoBehaviour
+namespace _Scripts.Menu
 {
-    public GameObject pauseMenu;
-  
-    
-    void Start()
+    public class ActivePauseMenu : MonoBehaviour
     {
-        
-//        pauseMenu.SetActive(false);
-        
-    }
-    
-    public void ResumeGame()
-    {
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
-       
-    }
+        public void GoToMainMenu()
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Main_Menu");
+        }
 
-    public void GoToMainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Main_Menu");
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
     }
-
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-    
-    
-    
-    
-    
-    
 }

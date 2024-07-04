@@ -32,12 +32,11 @@ namespace _Scripts.CoreSystems.Floor
             Camera cam = Camera.main;
             Vector2 rightBound = cam.ViewportToWorldPoint(new Vector2(1f, 1f));
             rightBound.y += 5f;
-            
+
             Vector3 spawnPos = new Vector3(0, rightBound.y, 0f);
             GameObject currFloor = Instantiate(finalRoomPrefab, spawnPos, Quaternion.identity);
             currFloor.GetComponent<Floor>().mySpeed = floorSpeed;
             currFloor.GetComponent<Floor>().iAmBuilding = true;
         }
-        
     }
 }

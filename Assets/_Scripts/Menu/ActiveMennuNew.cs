@@ -1,30 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-public class ActiveMennuNew : MonoBehaviour
+namespace _Scripts.Menu
 {
-    [SerializeField] private GameObject pauseMenu;
-
-    public void PauseActive(InputAction.CallbackContext context)
+    public class ActiveMennuNew : MonoBehaviour
     {
-        if (context.started)
+        [SerializeField] private GameObject pauseMenu;
+
+        public void PauseActive(InputAction.CallbackContext context)
         {
-            SwitchPause();
+            if (context.started)
+            {
+                SwitchPause();
+            }
         }
-    }
-    private void SwitchPause()
-    { 
-        if (pauseMenu.activeSelf)
+
+        private void SwitchPause()
         {
-            Time.timeScale = 1f;
-            pauseMenu.SetActive(false);
-            return;
+            if (pauseMenu.activeSelf)
+            {
+                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+                return;
+            }
+
+            Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
         }
-        Time.timeScale = 0f;
-        pauseMenu.SetActive(true);
-         
     }
 }
