@@ -342,7 +342,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 60f1fc07008af1244870b1e6c106e1a3, type: 2}
+  - {fileID: 2100000, guid: 7f4112de2491f304094d51e6dbbccf7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e4121404249f8c4babaa6ba94f2983e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e757fb7342ce2c346b0d290b8be9da8d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2358,14 +2358,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25872195, g: 0.27910414, b: 0.3207547, a: 1}
+  m_Color: {r: 0.4774831, g: 0.4992602, b: 0.5471698, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e4121404249f8c4babaa6ba94f2983e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e757fb7342ce2c346b0d290b8be9da8d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3430,14 +3430,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25872195, g: 0.27910414, b: 0.3207547, a: 1}
+  m_Color: {r: 0.47843137, g: 0.5019608, b: 0.54901963, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e4121404249f8c4babaa6ba94f2983e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e757fb7342ce2c346b0d290b8be9da8d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
