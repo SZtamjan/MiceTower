@@ -31,6 +31,13 @@ namespace _Scripts.Audio
             sfxSource.PlayOneShot(s.clip);
         }
 
+        public void PlayMusicOneShot(string name)
+        {
+            if(musicSource.isPlaying) musicSource.Stop();
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            musicSource.PlayOneShot(s.clip);
+        }
+        
         public void PlayMusicInLoop(string name)
         {
             Sound s = Array.Find(sounds, sound => sound.name == name);
