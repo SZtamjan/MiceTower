@@ -8,6 +8,8 @@ namespace _Scripts.UI
     {
         public static UIController Instance;
         
+        [SerializeField] private GameObject gameWinCanvas;
+        [SerializeField] private GameObject gameOverCanvas;
         [SerializeField] private TextMeshProUGUI scoreText;
         
         private void Awake()
@@ -18,6 +20,16 @@ namespace _Scripts.UI
         public void NewScoreToDisplay(int newScore)
         {
             scoreText.text = "Score: " + newScore;
+        }
+
+        public void WinUI()
+        {
+            gameWinCanvas.SetActive(true);
+        }
+
+        public void LoseUI()
+        {
+            gameOverCanvas.SetActive(true);
         }
     }
 }

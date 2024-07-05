@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using _Scripts.CoreSystems;
 using _Scripts.PlayerMovement.Actions;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,15 +13,17 @@ namespace _Scripts.PlayerMovement.Input
         [HideInInspector] public UnityEvent JumpEvent;
 
         private PlayerMove _playerMove;
+        private GameManager _gameManager;
 
         private void Start()
         {
             _playerMove = GetComponent<PlayerMove>();
+            _gameManager = GameManager.Instance;
         }
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            if (context.started)
+            if (context.started && _gameManager.CurrentGameState != GameState.Lose && _gameManager.CurrentGameState != GameState.Win)
             {
                 JumpEvent?.Invoke();
             }

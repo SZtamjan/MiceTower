@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5672164675616852007}
   - component: {fileID: 4777296607235385465}
   - component: {fileID: 6157505916194772877}
+  - component: {fileID: 6073446378519238389}
   m_Layer: 0
   m_Name: Ser
   m_TagString: SerKoniecPoziomu
@@ -152,6 +153,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 0.46120822}
   m_EdgeRadius: 0
+--- !u!114 &6073446378519238389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578188811638744990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f33ad4b9019224c8752d88d6364d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameWinCanvas: {fileID: 0}
+  gameOverCanvas: {fileID: 0}
 --- !u!1 &2663218545350763132
 GameObject:
   m_ObjectHideFlags: 0

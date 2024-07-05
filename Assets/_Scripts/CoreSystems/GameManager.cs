@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using _Scripts.Audio;
 using _Scripts.CoreSystems.Floor;
+using _Scripts.UI;
 using _Scripts.Walls;
 using UnityEngine;
 
@@ -48,9 +49,9 @@ namespace _Scripts.CoreSystems
                 case GameState.PreStart:
                     SetupWalls();
                     StartNewGameState(GameState.Game);
-                    List<string> songs = new List<string>();
-                    songs.Add("Test");
-                    StartCoroutine(AudioManagerScript.Instance.PlayMusicsRandomlyInLoop(songs));
+                    //List<string> songs = new List<string>();
+                    //songs.Add("Test");
+                    //StartCoroutine(AudioManagerScript.Instance.PlayMusicsRandomlyInLoop(songs));
                     break;
                 case GameState.Game:
                     StartFloor();
@@ -60,14 +61,16 @@ namespace _Scripts.CoreSystems
                     SpawnFinalRoom();
                     break;
                 case GameState.Win:
-                    AudioManagerScript.Instance.PauseMusic();
                     StopFloor();
-                    Debug.Log("Win is To be implemented");
+                    AudioManagerScript.Instance.PauseMusic();
+                    UIController.Instance.WinUI();
+                    Debug.Log("Win");
                     break;
                 case GameState.Lose:
-                    AudioManagerScript.Instance.PauseMusic();
                     StopFloor();
-                    Debug.Log("Lose is To be implemented");
+                    AudioManagerScript.Instance.PauseMusic();
+                    UIController.Instance.LoseUI();
+                    Debug.Log("Lose");
                     break;
                 default:
                     Debug.LogError("Terrible exception, cant be " + newState);

@@ -7,15 +7,7 @@ namespace _Scripts.Menu
 {
     public class MainMenu : MonoBehaviour
     {
-
         [SerializeField] public int sceneIndex;
-        
-        
-        private void Start()
-        {
-            AudioManagerScript.Instance.PlayMusicInLoop("BackgroundMusic");
-        }
-
 
         public void Play()
         {

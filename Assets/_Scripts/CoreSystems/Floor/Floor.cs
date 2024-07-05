@@ -44,7 +44,7 @@ namespace _Scripts.CoreSystems.Floor
 
             if(iAmBuilding && transform.position.y < 0f)
             {
-                if(GameManager.Instance.CurrentGameState == GameState.Finish) GameManager.Instance.StartNewGameState(GameState.Win);
+                //if(GameManager.Instance.CurrentGameState == GameState.Finish) GameManager.Instance.StartNewGameState(GameState.Win);
                 return;
             }
             
