@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - SerKoniecPoziomu
   layers:
   - Default
   - TransparentFX
