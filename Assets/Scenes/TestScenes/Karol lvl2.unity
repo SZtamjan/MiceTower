@@ -1020,9 +1020,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdebbb08ffb340abb269e223fa1b4138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalScore: 200
-  spawnFloorRate: 0.6
-  floorMoveSpeed: 0.5
+  goalScore: 600
+  spawnFloorRate: 0.8
+  floorMoveSpeed: 0.7
 --- !u!114 &1197194918
 MonoBehaviour:
   m_ObjectHideFlags: 0
