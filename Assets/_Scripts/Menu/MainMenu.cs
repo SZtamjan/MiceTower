@@ -1,3 +1,5 @@
+using System;
+using _Scripts.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,9 +7,16 @@ namespace _Scripts.Menu
 {
     public class MainMenu : MonoBehaviour
     {
+
         [SerializeField] public int sceneIndex;
         
         
+        private void Start()
+        {
+            AudioManagerScript.Instance.PlayMusicInLoop("BackgroundMusic");
+        }
+
+
         public void Play()
         {
             SceneManager.LoadScene(sceneIndex);
@@ -18,5 +27,6 @@ namespace _Scripts.Menu
             Debug.Log("Exit");
             Application.Quit();
         } 
+        
     }
 }
