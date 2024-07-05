@@ -5,9 +5,12 @@ namespace _Scripts.Menu
 {
     public class MainMenu : MonoBehaviour
     {
+        [SerializeField] public int sceneIndex;
+        
+        
         public void Play()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(sceneIndex);
         }
 
         public void Exit()
