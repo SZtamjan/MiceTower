@@ -1,3 +1,4 @@
+using _Scripts.Audio;
 using UnityEngine;
 
 namespace _Scripts.PlayerMovement.Actions
@@ -21,7 +22,7 @@ namespace _Scripts.PlayerMovement.Actions
         {
             if (onGround)
             {
-                
+                AudioManagerScript.Instance.PlaySFXOneShot("Jump");
                 _rigidbody2D.AddForce(Vector2.up * height * 50f);
             //  animator.SetBool("isJumping", !onGround);
             }
