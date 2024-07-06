@@ -24,8 +24,6 @@ namespace _Scripts.CoreSystems.Floor
             _myCollider = GetComponent<BoxCollider2D>();
             
             GivePoints();
-            AudioManagerScript.Instance.PlayMusicInLoop("BackgroundMusic");
-            
         }
 
         private void GivePoints()

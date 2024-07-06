@@ -49,9 +49,7 @@ namespace _Scripts.CoreSystems
                 case GameState.PreStart:
                     SetupWalls();
                     StartNewGameState(GameState.Game);
-                    //List<string> songs = new List<string>();
-                    //songs.Add("Test");
-                    //StartCoroutine(AudioManagerScript.Instance.PlayMusicsRandomlyInLoop(songs));
+                    AudioManagerScript.Instance.PlayMusicInLoop("BackgroundMusic");
                     break;
                 case GameState.Game:
                     StartFloor();
@@ -62,17 +60,13 @@ namespace _Scripts.CoreSystems
                     break;
                 case GameState.Win:
                     StopFloor();
-                    AudioManagerScript.Instance.PauseMusic();
-                    AudioManagerScript.Instance.PlayMusicInLoop("GameWin");
+                    AudioManagerScript.Instance.PlayMusicOneShot("GameWin");
                     UIController.Instance.WinUI();
-                    Debug.Log("Win");
                     break;
                 case GameState.Lose:
                     StopFloor();
-                    AudioManagerScript.Instance.PauseMusic();
-                    AudioManagerScript.Instance.PlayMusicInLoop("GameLose");
+                    AudioManagerScript.Instance.PlayMusicOneShot("GameLose");
                     UIController.Instance.LoseUI();
-                    Debug.Log("Lose");
                     break;
                 default:
                     Debug.LogError("Terrible exception, cant be " + newState);
