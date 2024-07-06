@@ -1,4 +1,5 @@
 ﻿using System;
+using _Scripts.Audio;
 using _Scripts.PlayerMovement.Actions;
 using _Scripts.Score;
 using UnityEngine;
@@ -23,6 +24,8 @@ namespace _Scripts.CoreSystems.Floor
             _myCollider = GetComponent<BoxCollider2D>();
             
             GivePoints();
+            AudioManagerScript.Instance.PlayMusicInLoop("BackgroundMusic");
+            
         }
 
         private void GivePoints()

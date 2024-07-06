@@ -63,12 +63,14 @@ namespace _Scripts.CoreSystems
                 case GameState.Win:
                     StopFloor();
                     AudioManagerScript.Instance.PauseMusic();
+                    AudioManagerScript.Instance.PlayMusicInLoop("GameWin");
                     UIController.Instance.WinUI();
                     Debug.Log("Win");
                     break;
                 case GameState.Lose:
                     StopFloor();
                     AudioManagerScript.Instance.PauseMusic();
+                    AudioManagerScript.Instance.PlayMusicInLoop("GameLose");
                     UIController.Instance.LoseUI();
                     Debug.Log("Lose");
                     break;
